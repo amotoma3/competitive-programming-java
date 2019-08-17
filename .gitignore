@@ -1,4 +1,9 @@
-*
-!yaal
-!src
-!README.md
+.idea/
+archive/
+out/
+output/
+src/tasks
+*.template
+*.properties
+*.txt
+*.iml
