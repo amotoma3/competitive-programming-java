@@ -13,7 +13,7 @@ public class Modulo {
     public static Map<Long, List<Long>> pows = new HashMap<>();
 
     public Modulo(long value) {
-        this.value = value;
+        this.value = (value % mod + mod) % mod;
     }
 
     public static long add(long a, long b) {
@@ -33,7 +33,7 @@ public class Modulo {
     }
 
     public static long mlt(long a, long b) {
-        return (a * b) % mod;
+        return ((a % mod + mod) * (b % mod + mod)) % mod;
     }
 
     public static long rev(long a) {
@@ -71,8 +71,7 @@ public class Modulo {
     }
 
     public Modulo add(Modulo m) {
-        setValue(add(value, m.getValue()));
-        return this;
+        return add(m.getValue());
     }
 
     public Modulo sub(long a) {
@@ -81,8 +80,7 @@ public class Modulo {
     }
 
     public Modulo sub(Modulo m) {
-        setValue(sub(value, m.getValue()));
-        return this;
+        return sub(m.getValue());
     }
 
     public Modulo mlt(long a) {
@@ -91,8 +89,7 @@ public class Modulo {
     }
 
     public Modulo mlt(Modulo m) {
-        setValue(mlt(value, m.getValue()));
-        return this;
+        return mlt(m.getValue());
     }
 
     public Modulo div(long a) {
@@ -101,8 +98,7 @@ public class Modulo {
     }
 
     public Modulo div(Modulo m) {
-        setValue(div(value, m.getValue()));
-        return this;
+        return div(m.getValue());
     }
 
     /**
