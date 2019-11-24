@@ -1,4 +1,4 @@
-# mylib
+# competitive-programming-java
 
 ## Git
 
